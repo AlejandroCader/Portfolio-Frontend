@@ -1,0 +1,98 @@
+/* src/styles/global.css */
+:root {
+    --primary-color: #007bff;  /* Azul vibrante */
+    --secondary-color: #f8f9fa;  /* Gris claro */
+    --background-color: #f1f1f1;  /* Fondo suave */
+    --text-color: #333;  /* Gris oscuro para el texto */
+    --highlight-color: #ff6347;  /* Rojo cálido para acentos */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  nav {
+    background: var(--primary-color);
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+  }
+
+  .project-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 25px;
+    margin: 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .project-card a {
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 16px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+
+  .project-card a:hover {
+    background-color: var(--highlight-color);
+  }
+
+  .project-card p{
+    margin-bottom: 25px;
+  }
+  
+  .projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 0px auto;
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    .projects-container {
+      grid-template-columns: 1fr; /* Una sola columna en pantallas más pequeñas */
+    }
+  
+    .portfolio-header h1 {
+      font-size: 2.5rem;
+    }
+  
+    .portfolio-header p {
+      font-size: 1rem;
+    }
+
+    .project-card {
+        margin: 16px 10px; /* Ajustar márgenes en pantallas más pequeñas */
+      }
+  }
+  

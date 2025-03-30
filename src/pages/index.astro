@@ -1,11 +1,44 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import ProjectCard from "../components/ProjectCard.astro";
+import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+import "../styles/global.css";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+interface Project {
+  id: number;
+  name: string;
+  description: string;
+  link: string;
+  createdAt: string;
+}
+
+let projects: Project[] = await fetch("http://localhost:8080/api/projects")
+  .then((res) => res.json())
+  .catch((err) => {
+    console.error("Error fetching projects:", err);
+    return [];
+  });
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html>
+  <head>
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Welcome to My Portfolio</h1>
+      <div class="projects-container">
+        {
+          projects.map((project: Project) => (
+            <div class="project-card">
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+              <a href={project.link}>View Project</a>
+            </div>
+          ))
+        }
+      </div>
+    </main>
+  </body>
+</html>
