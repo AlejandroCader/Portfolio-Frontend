@@ -1,5 +1,5 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
+//import ProjectCard from "../components/ProjectCard.astro";
 import Navigation from "../components/Navigation.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
@@ -12,14 +12,14 @@ interface Project {
   createdAt: string;
 }
 
-let projects: Project[] = await fetch(
+/*let projects: Project[] = await fetch(
   "https://portfolio-backend-production-26e2.up.railway.app/api/projects"
 )
   .then((res) => res.json())
   .catch((err) => {
     console.error("Error fetching projects:", err);
     return [];
-  });
+  });*/
 ---
 
 <html>
@@ -30,7 +30,7 @@ let projects: Project[] = await fetch(
     <Header />
     <main>
       <h1>Welcome to My Portfolio</h1>
-      <div class="projects-container">
+      <!-- div class="projects-container">
         {
           projects.map((project: Project) => (
             <div class="project-card">
@@ -40,7 +40,7 @@ let projects: Project[] = await fetch(
             </div>
           ))
         }
-      </div>
+      </!-->
     </main>
   </body>
 </html>
