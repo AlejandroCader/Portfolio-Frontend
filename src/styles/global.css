@@ -1,4 +1,8 @@
 /* src/styles/global.css */
+
+@import "tailwindcss";
+
+
 :root {
     --primary-color: #007bff;  /* Azul vibrante */
     --secondary-color: #f8f9fa;  /* Gris claro */

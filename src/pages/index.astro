@@ -1,6 +1,5 @@
 ---
 //import ProjectCard from "../components/ProjectCard.astro";
-import Navigation from "../components/Navigation.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
 
@@ -12,35 +11,43 @@ interface Project {
   createdAt: string;
 }
 
-/*let projects: Project[] = await fetch(
+let projects: Project[] = await fetch(
   "https://portfolio-backend-production-26e2.up.railway.app/api/projects"
 )
   .then((res) => res.json())
   .catch((err) => {
     console.error("Error fetching projects:", err);
     return [];
-  });*/
+  });
 ---
 
 <html>
   <head>
     <title>Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-white text-gray-900 font-sans">
     <Header />
-    <main>
-      <h1>Welcome to My Portfolio</h1>
-      <!-- div class="projects-container">
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <h1 class="text-4xl font-bold mb-8">Welcome to My Portfolio</h1>
+
+      <div class="projects-container grid gap-6 sm:grid-cols-2">
         {
           projects.map((project: Project) => (
-            <div class="project-card">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <a href={project.link}>View Project</a>
+            <div class="project-card p-6 border border-gray-300 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+              <h3 class="text-xl font-semibold mb-2">{project.name}</h3>
+              <p class="text-gray-700 mb-4">{project.description}</p>
+              <a
+                href={project.link}
+                class="text-blue-600 hover:text-blue-800 font-medium transition-colors"
+              >
+                View Project
+              </a>
             </div>
           ))
         }
-      </!-->
+      </div>
     </main>
   </body>
 </html>

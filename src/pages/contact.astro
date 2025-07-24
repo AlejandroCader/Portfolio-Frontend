@@ -6,48 +6,70 @@ import "../styles/global.css";
 <html>
   <head>
     <title>Contact</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
+  <body class="bg-white text-gray-800 font-sans">
     <Header />
-    <main>
-      <h1>Contact Me</h1>
-      <p>Feel free to reach out for collaborations or just a chat.</p>
 
-      <form id="contact-form">
+    <main class="max-w-3xl mx-auto px-6 py-12 space-y-8">
+      <h1 class="text-3xl font-bold text-gray-900">Contact Me</h1>
+      <p class="text-gray-700">
+        Feel free to reach out for collaborations or just a chat.
+      </p>
+
+      <form id="contact-form" class="space-y-6">
         <div>
-          <label for="name">Name</label>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1"
+            >Name</label
+          >
           <input
             type="text"
             id="name"
             name="name"
             placeholder="Your name"
             required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label for="email">Email</label>
+          <label
+            for="email"
+            class="block text-sm font-medium text-gray-700 mb-1">Email</label
+          >
           <input
             type="email"
             id="email"
             name="email"
             placeholder="Your email"
             required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label for="message">Message</label>
+          <label
+            for="message"
+            class="block text-sm font-medium text-gray-700 mb-1">Message</label
+          >
           <textarea
             id="message"
             name="message"
             placeholder="Write your message here..."
-            required></textarea>
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            rows="5"></textarea>
         </div>
 
-        <button type="submit">Send Message</button>
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors"
+        >
+          Send Message
+        </button>
       </form>
     </main>
+
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const form = document.getElementById("contact-form");
